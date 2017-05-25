@@ -3,7 +3,7 @@ const YoutubeMusicChannelId = 'UC-9-kyTW8ZkZNDHQJ6FgpwQ';
 class Youtube {
     constructor() {
         this.downloader = new Downloader();
-        this.searcher = new Searcher();
+        this.searcher = new Searcher(15);
         this.lastFM = new LastFM();
     }
 

@@ -110,6 +110,7 @@ function exportDownload() {
     ).then(done => {
         console.log("DONE", done);
         window.setProgressBar(0);
+        closeDialog('download-dialog');
     });
 }
 
