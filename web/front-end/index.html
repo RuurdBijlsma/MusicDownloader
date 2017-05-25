@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Downloader</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/script.js"></script>
+    <script src="js/youtube/Downloader.js"></script>
+    <script src="js/youtube/Searcher.js"></script>
+    <script src="js/youtube/Youtube.js"></script>
+    <script src="js/LastFM.js"></script>
+</head>
+<body>
+<header class="mdc-toolbar mdc-toolbar--fixed">
+    <div class="mdc-toolbar__row">
+        <a id="hambutton" href="#" class="material-icons">menu</a>
+        <span class="mdc-toolbar__title">Music Downloader</span>
+        <input type="text" placeholder="Search" id="search">
+        <a href="#" class="material-icons" aria-label="Search" alt="Search">search</a>
+    </div>
+</header>
+<div class="mdc-toolbar-fixed-adjust">
+    <nav class="mdc-permanent-drawer mdc-typography">
+        <a class="mdc-list-item mdc-permanent-drawer--selected" href="#">
+            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">file_download</i>Downloads
+        </a>
+        <a class="mdc-list-item" href="#">
+            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">settings</i>Preferences
+        </a>
+    </nav>
+    <main id="results">
+
+    </main>
+</div>
+<aside id="download-dialog"
+       style="visibility:hidden;transition:opacity 0.2s;"
+       class="mdc-dialog"
+       role="alertdialog"
+       aria-labelledby="my-mdc-dialog-label"
+       aria-describedby="my-mdc-dialog-description">
+    <div class="mdc-dialog__surface">
+        <header class="mdc-dialog__header">
+            <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+                MP3 Details
+            </h2>
+        </header>
+        <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+            <div class="mdc-textfield mdc-textfield--upgraded" style="width:100%">
+                <input style="width:100%" type="text" id="title-filled" class="mdc-textfield__input"
+                       value="">
+                <label class="mdc-textfield__label mdc-textfield__label--float-above" for="title-filled">
+                    Title
+                </label>
+            </div>
+            <div class="mdc-textfield mdc-textfield--upgraded" style="width:100%">
+                <input style="width:100%" type="text" id="artist-filled" class="mdc-textfield__input"
+                       value="">
+                <label class="mdc-textfield__label mdc-textfield__label--float-above" for="artist-filled">
+                    Artist
+                </label>
+            </div>
+            <div class="mdc-textfield mdc-textfield--upgraded" style="width: calc(100% - 96px);">
+                <input style="width:100%" type="text" id="output-filled" class="mdc-textfield__input"
+                       value="">
+                <label class="mdc-textfield__label mdc-textfield__label--float-above" for="output-filled">
+                    Output folder
+                </label>
+            </div>
+            <button class="mdc-button" onclick="browse()">
+                Browse
+            </button>
+        </section>
+        <footer class="mdc-dialog__footer">
+            <button onclick="exportDownload()" type="button"
+                    class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">
+                Download
+            </button>
+        </footer>
+    </div>
+    <div class="mdc-dialog__backdrop"></div>
+</aside>
+</body>
+</html>
