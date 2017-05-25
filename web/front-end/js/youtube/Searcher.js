@@ -7,7 +7,7 @@ class Searcher {
 
     async getKey() {
         if (this.key === undefined)
-            this.key = await utils.readFile('res/api.key');
+            this.key = await utils.readFile(utils.fixPath('res/api.key'));
 
         return this.key;
     }

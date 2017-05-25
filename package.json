@@ -2,17 +2,14 @@
   "name": "MusicDownloader",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "web/back-end/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": "https://github.com/ruurdbijlsma/MusicDownloader",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "music",
+    "downloader"
   ],
   "author": "Ruurd Bijlsma",
   "license": "CC0-1.0",
@@ -21,7 +18,7 @@
     "electron-is-dev": "^0.1.2"
   },
   "dependencies": {
-    "@material/toolbar": "^0.3.2",
-    "youtube-mp3-downloader": "^0.5.0"
+    "youtube-mp3-downloader": "^0.5.0",
+    "youtube-search": "^1.0.9"
   }
 }

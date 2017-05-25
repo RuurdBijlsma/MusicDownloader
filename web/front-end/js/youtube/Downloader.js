@@ -2,15 +2,13 @@ const YoutubeMp3Downloader = require('./js/youtube/YoutubeMp3Downloader.js');
 const isDev = require('electron-is-dev');
 
 class Downloader {
-    constructor(outputPath = 'res/output') {
+    constructor(outputPath = utils.fixPath('res/output')) {
         this.initializeYD(outputPath);
     }
 
     initializeYD(outputPath) {
-        let path = (isDev ? "" : "resources/app/" ) + "res/ffmpeg.exe";
-
         this.YD = new YoutubeMp3Downloader({
-            'ffmpegPath': path,                     // Where is the FFmpeg binary located?
+            'ffmpegPath': utils.fixPath("res/ffmpeg.exe"),                     // Where is the FFmpeg binary located?
             'outputPath': outputPath,               // Where should the downloaded and encoded files be stored?
             'youtubeVideoQuality': 'highest',       // What video quality should be used?
             'queueParallelism': 2,                  // How many parallel downloads/encodes should be started?

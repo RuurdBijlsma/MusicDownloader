@@ -1,5 +1,5 @@
 const electron = require('electron');
-const isDev = require('electron-is-dev');
+let isDev = require('electron-is-dev');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.

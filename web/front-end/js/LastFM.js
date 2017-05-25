@@ -6,8 +6,9 @@ class LastFM {
     }
 
     async getKey() {
-        if (this.key === undefined)
-            this.key = await utils.readFile('res/fm.key');
+        if (this.key === undefined) {
+            this.key = await utils.readFile(utils.fixPath('res/fm.key'));
+        }
 
         return this.key;
     }

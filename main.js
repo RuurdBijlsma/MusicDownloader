@@ -1,0 +1,1 @@
+require('./web/back-end/main.js');

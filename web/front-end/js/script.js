@@ -1,6 +1,6 @@
 const {remote} = require('electron');
 const {dialog} = require('electron').remote;
-const utils = remote.require('./utils.js');
+const utils = remote.require('./web/back-end/utils.js');
 
 document.addEventListener('DOMContentLoaded', init);
 

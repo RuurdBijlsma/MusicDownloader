@@ -1,4 +1,5 @@
 const fs = require('fs');
+const isDev = require('electron-is-dev');
 
 exports.readFile = (name, encoding = 'utf8') => {
     return new Promise((resolve, error) => {
@@ -10,6 +11,8 @@ exports.readFile = (name, encoding = 'utf8') => {
         });
     });
 };
+
+exports.fixPath = name => (isDev ? "" : "resources/app/" ) + name;
 
 exports.fileSize = name => fs.statSync(name).size;
 
